@@ -4,18 +4,22 @@
  */
 
 package com.example.web;
+import com.example.model.generos;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.annotation.WebServlet;
 
 /**
  *
  * @author Kevin PC
  */
+@WebServlet(urlPatterns = {"/sendpdf"})
 public class Servrlet extends HttpServlet {
 
     /**
@@ -83,8 +87,10 @@ public class Servrlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             String Genero = request.getParameter("Genero");
+            generos be = new generos();
+            List result = be.getBrands(Genero);
         
-            request.setAttribute("Genero", Genero);
+            request.setAttribute("result", result);
             
             RequestDispatcher view = request.getRequestDispatcher("Resultado.jsp");
             view.forward(request, response);

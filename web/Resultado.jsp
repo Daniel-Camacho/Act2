@@ -4,6 +4,8 @@
     Author     : Kevin PC
 --%>
 
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -16,7 +18,11 @@
         <h1>Nuestra recomendación</h1>   
         
         <%
-            out.print("<p"+request.getAttribute("Genero")+";\"> " + "</p>"); 
+            List result = (List)request.getAttribute("result");
+            Iterator it = result.iterator();
+            while(it.hasNext()){
+            out.print("<br>try: "+it.next());
+            }
         %>
         
     </body>

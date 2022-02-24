@@ -15,23 +15,27 @@ public class generos {
         if(genero.equals("accion")){
             brands.add("Ver: Venom");
             brands.add("Ver: Matrix");
+            return(brands);
         }
         if (genero.equals("terror")){
             brands.add("Ver: IT");
             brands.add("Ver: No respires");
+            return(brands);
         }
         if (genero.equals("drama")){
             brands.add("Ver 22 de julio");
             brands.add("Ver: El rey");
+            return(brands);
         }
         if (genero.equals("comedia")){
             brands.add("Ver: Solo en casa");
             brands.add("Ver: Scary movie");
+            return(brands);
         }
         else{
             brands.add("No se encontro su busqueda");
+            return(brands);
         }
     
-        return(brands);
     }
 }

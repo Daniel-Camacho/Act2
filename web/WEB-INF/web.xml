@@ -11,7 +11,7 @@
     </session-config>
     <servlet>
         <servlet-name>Servrlet</servlet-name>
-        <servlet-class>com.example.web.Servrlet</servlet-class>
+        <servlet-class>Servrlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Servrlet</servlet-name>
